@@ -21,9 +21,6 @@ import javax.persistence.Table;
  * 
  * @author Charlotte Cavalier <charlotte.cavalier@gmail.com>
  */
-@Entity
-@SequenceGenerator(name="SEQ_ARTICLE",sequenceName="SEQ_DB_NAME")
-@Table(name="DVD")
 public class Dvd extends Article implements Serializable {
 
 	/**
@@ -31,19 +28,10 @@ public class Dvd extends Article implements Serializable {
 	 */
 	private static final long serialVersionUID = -9185080208096257030L;
 
-	@Column
-	@Enumerated(EnumType.STRING)
 	private DvdCategory category;
-	
-	@ManyToOne(optional=false) 
-    @JoinColumn(name="idRealisateur", nullable=false, updatable=false)
+
 	private Person realisateur;
-		
-	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	@JoinTable(name = "PLAYED_IN_DVD_PERSON", joinColumns = {
-			@JoinColumn(name = "idDvd", nullable = false, updatable = false) },
-			inverseJoinColumns = { @JoinColumn(name = "idVedette",
-					nullable = false, updatable = false) })
+
 	private Set<Person> vedettes;
 	
 	

@@ -17,30 +17,18 @@ import javax.persistence.Table;
  * 
  * @author Charlotte Cavalier <charlotte.cavalier@gmail.com>
  */
-@Entity
-@Inheritance(strategy=InheritanceType.JOINED)
-@Table(name="ARTICLE")
-public class Article implements Serializable, Comparable<Article> {
+public abstract class Article implements Serializable, Comparable<Article> {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 2950938335694212226L;
 
-	@Id
-	@GeneratedValue(strategy=GenerationType.SEQUENCE, generator="article_seq")
-	@SequenceGenerator(
-		name="article_seq",
-		sequenceName="article_sequence",
-		allocationSize=20
-	)
-	@Column
+
 	private Long idArticle;
 
-	@Column
 	private Float price;
-	
-	@Column
+
 	private String description;
 	
 	public Article() {

@@ -17,12 +17,11 @@ public class DiskDao {
 	
 	public Long persist(Disk disk){
 		Session session = sessionFactory.getCurrentSession();
-		Long returnID = (Long) session.save(disk);
-		return returnID;
+		return null;
 	}
 	
 	public Disk find(Long id){
 		Session session = sessionFactory.getCurrentSession();
-		return (Disk) session.load(Disk.class, id);
+		return null;
 	}
 }

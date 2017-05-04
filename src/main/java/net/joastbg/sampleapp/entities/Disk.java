@@ -11,9 +11,6 @@ import org.hibernate.annotations.Type;
  * 
  * @author Charlotte Cavalier <charlotte.cavalier@gmail.com>
  */
-@Entity
-@SequenceGenerator(name="SEQ_ARTICLE",sequenceName="SEQ_DB_NAME")
-@Table(name="DISK")
 public class Disk extends Article implements Serializable {
 
 	/**
@@ -21,11 +18,8 @@ public class Disk extends Article implements Serializable {
 	 */
 	private static final long serialVersionUID = 1635687572249825983L;
 
-	@Column
 	private Long idArtist;
-	
-	@Column(name = "style")
-	@Enumerated(EnumType.STRING)
+
 	private MusicStyle musicStyle;
 
 	public Disk() {

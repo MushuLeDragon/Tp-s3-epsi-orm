@@ -93,26 +93,26 @@ insert into DISK(idArticle, idArtist, style)
 		(select id FROM ARTIST WHERE name = 'Dr Grims'), 
 		'NODATA');
 
-insert into ARTICLE(price, description) values(35.00, 'Sorti en 1977');
+insert into ARTICLE(price, description) values(35.00, 'Star Wars');
 insert into DVD(idArticle, category, idRealisateur) 
 	values (
-		(SELECT idArticle FROM ARTICLE WHERE price = 35.00 AND description = 'Sorti en 1977'),
+		(SELECT idArticle FROM ARTICLE WHERE price = 35.00 AND description = 'Star Wars'),
 		'FANTASTIQUE',
 		(SELECT id FROM PERSON WHERE lastName = 'Lucas' AND firstName = 'Georges')
 	);
 	
-insert into ARTICLE(price, description) values(23.00, 'Un chef d''oeuvre');
+insert into ARTICLE(price, description) values(23.00, 'Memento');
 insert into DVD(idArticle, category, idRealisateur) 
 	values (
-		(SELECT idArticle FROM ARTICLE WHERE price = 23.00 AND description = 'Un chef d''oeuvre'),
+		(SELECT idArticle FROM ARTICLE WHERE price = 23.00 AND description = 'Memento'),
 		'THRILLER',
 		(SELECT id FROM PERSON WHERE lastName = 'Nolan' AND firstName = 'Christopher')
 	);
 	
-insert into ARTICLE(price, description) values(29.00, 'Du lourd visuellement');
+insert into ARTICLE(price, description) values(29.00, 'Transformers');
 insert into DVD(idArticle, category, idRealisateur) 
 	values (
-		(SELECT idArticle FROM ARTICLE WHERE price = 29.00 AND description = 'Du lourd visuellement'),
+		(SELECT idArticle FROM ARTICLE WHERE price = 29.00 AND description = 'Transformers'),
 		'ACTION',
 		(SELECT id FROM PERSON WHERE lastName = 'Bay' AND firstName = 'Michael')
 	);

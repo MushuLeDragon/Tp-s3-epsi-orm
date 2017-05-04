@@ -22,8 +22,6 @@ import javax.persistence.Table;
  * 
  * @author Charlotte Cavalier <charlotte.cavalier@gmail.com>
  */
-@Entity
-@Table(name="PERSON")
 public class Person implements Serializable, Comparable<Person> {
 
 	/**
@@ -31,33 +29,16 @@ public class Person implements Serializable, Comparable<Person> {
 	 */
 	private static final long serialVersionUID = -5849043776684119492L;
 
-	@Id
-	@GeneratedValue(strategy = GenerationType.AUTO)
-	@Column
 	private Long id;
 
-	@Column
 	private String lastName;
-	
-	@Column
+
 	private String firstName;
-	
-	@Column
-	@Enumerated(EnumType.STRING)
+
 	private TypePerson personType;
-	
-	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	@JoinTable(name = "WROTE_BY_AUTHOR_BOOK", joinColumns = {
-			@JoinColumn(name = "idAuthor", nullable = false, updatable = false) },
-			inverseJoinColumns = { @JoinColumn(name = "idBook",
-					nullable = false, updatable = false) })
+
 	private Set<Book> books;
-	
-	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	@JoinTable(name = "PLAYED_IN_DVD_PERSON", joinColumns = {
-			@JoinColumn(name = "idVedette", nullable = false, updatable = false) },
-			inverseJoinColumns = { @JoinColumn(name = "idDvd",
-					nullable = false, updatable = false) })
+
 	private Set<Dvd> films;
 	
 	// -------------------- 

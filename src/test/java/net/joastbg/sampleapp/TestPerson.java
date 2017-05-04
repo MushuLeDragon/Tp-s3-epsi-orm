@@ -17,12 +17,6 @@ import net.joastbg.sampleapp.entities.Book;
 
 public class TestPerson {
 
-	@Test
-	public void testCreateNewAuthorWithName() {
-		Person person = new Person("Asimov","Isaac",TypePerson.AUTHOR);
-//		Assert.assertNotNull("Id auteur null",author.getId());
-	}
-
 	@Test(expected = IllegalArgumentException.class)
 	public void testCreateNewAuthorWithEmptyLastName() {
 		new Person("","JRR",TypePerson.AUTHOR);
@@ -54,11 +48,11 @@ public class TestPerson {
 	}
 	
 	@Test 
-	public void testAddBooksToAuthorMesCouilles() {
+	public void testAddBooksToAuthor() {
 		Person person = new Person("Tolkien", "JRR",TypePerson.AUTHOR);
 		Set<Book> books = new HashSet<Book>();
 		
-		books.add(new Book("La communauté de l'anneau"));
+		books.add(new Book("La communautï¿½ de l'anneau"));
 		books.add(new Book("Les deux tours"));
 		books.add(new Book("Le retour du roi"));
 		

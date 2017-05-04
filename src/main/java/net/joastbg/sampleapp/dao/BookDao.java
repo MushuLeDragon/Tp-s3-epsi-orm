@@ -22,32 +22,26 @@ public class BookDao {
 	
 	public Long persist(Book book){
 		Session session = sessionFactory.getCurrentSession();
-		Long returnID = (Long) session.save(book);
-		return returnID;
+		return null;
 	}
 	
 	public Book find(Long id){
 		Session session = sessionFactory.getCurrentSession();
-		return (Book) session.load(Book.class, id);
+		return null;
 	}
 
 	public List<Book> findAll(){
 		Session session = sessionFactory.getCurrentSession();
-		Query q = session.createQuery("FROM Book");
-		return q.list();
+		return null;
 	}
 
 	public Book findByTitle(String title) throws DaoException {
 		Session session = sessionFactory.getCurrentSession();
-		Query q = session.createQuery("FROM Book WHERE title = :title");
-		q.setString("title", title);
-		return (Book)q.uniqueResult();
+		return null;
 	}	
 	
 	public Book findByIsbn(String isbn) throws DaoException {
 		Session session = sessionFactory.getCurrentSession();
-		Query q = session.createQuery("FROM Book WHERE isbn = :isbn");
-		q.setString("isbn", isbn);
-		return (Book)q.uniqueResult();
+		return null;
 	}	
 }

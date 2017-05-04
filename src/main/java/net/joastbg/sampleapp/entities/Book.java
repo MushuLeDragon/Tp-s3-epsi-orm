@@ -21,9 +21,6 @@ import org.joda.time.DateTime;
  * 
  * @author Charlotte Cavalier <charlotte.cavalier@gmail.com>
  */
-@Entity
-@SequenceGenerator(name="SEQ_ARTICLE",sequenceName="SEQ_DB_NAME")
-@Table(name="BOOK")
 public class Book extends Article implements Serializable {
 
 	/**
@@ -31,17 +28,10 @@ public class Book extends Article implements Serializable {
 	 */
 	private static final long serialVersionUID = -7615624242713702030L;
 
-	@Column
 	private String title;
-	
-	@Column
+
 	private String ISBN;
 
-	@ManyToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
-	@JoinTable(name = "WROTE_BY_AUTHOR_BOOK", joinColumns = {
-			@JoinColumn(name = "idBook", nullable = false, updatable = false) },
-			inverseJoinColumns = { @JoinColumn(name = "idAuthor",
-					nullable = false, updatable = false) })
 	private Set<Person> authors;
 
 	public Book() {

@@ -18,13 +18,17 @@ public class DvdDao {
 	
 	public Long persist(Dvd dvd){
 		Session session = sessionFactory.getCurrentSession();
-		Long returnID = (Long) session.save(dvd);
-		return returnID;
+		return null;
 	}
 	
 	public Dvd find(Long id){
 		Session session = sessionFactory.getCurrentSession();
-		return (Dvd) session.load(Dvd.class, id);
+		return null;
+	}
+
+	public Dvd findByDescription(String description) {
+		Session session = sessionFactory.getCurrentSession();
+		return null;
 	}
 	
 }
